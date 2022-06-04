@@ -61,9 +61,6 @@ class _AnalyticsPageState extends State<AnalyticsPage>
               height: 24.0,
             ),
             _tabBar(),
-            const SizedBox(
-              height: 24.0,
-            ),
             _tabBarView(),
           ],
         ),
@@ -91,8 +88,8 @@ class _AnalyticsPageState extends State<AnalyticsPage>
 
   Widget _tabBarView() {
     return SizedBox(
-      width: 250,
-      height: 250,
+      width: 600,
+      height: 500,
       child: TabBarView(
         controller: _tabController,
         children: myTabs.map((Tab tab) {
@@ -111,10 +108,11 @@ class _AnalyticsPageState extends State<AnalyticsPage>
   late int _value = 1;
   Widget _filters(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         DropdownButton<int>(
+            borderRadius: const BorderRadius.all(
+              Radius.circular(10.0),
+            ),
             icon: const Icon(Icons.arrow_drop_down),
             value: _value,
             style: TextStyle(
@@ -122,7 +120,7 @@ class _AnalyticsPageState extends State<AnalyticsPage>
                 fontFamily: 'Gilroy_Meduim',
                 fontSize: 12.0),
             underline: Container(
-              height: 2,
+              height: 1,
               color: ConstantColors.grayLightColor,
             ),
             onChanged: (value) {
@@ -147,6 +145,404 @@ class _AnalyticsPageState extends State<AnalyticsPage>
   }
 
   Widget _activityTabs() {
-    return Icon(Icons.abc);
+    return SizedBox(
+      width: 600.0,
+      height: 1200.0,
+      child: ListView(
+        children: [
+          Container(
+            height: 129.0,
+            width: 312.0,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10.0),
+              ),
+              color: ConstantColors.grayColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01',
+                        style: TextStyle(
+                          color: ConstantColors.whiteColor,
+                          fontFamily: 'Gilroy_Meduim',
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Image.asset(
+                        'assets/images/Profile_Verified_01.png',
+                        height: 45.0,
+                        width: 45.0,
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Text(
+                        'Bored Ape Yacht Club',
+                        style: TextStyle(
+                            color: ConstantColors.whiteColor,
+                            fontFamily: 'Gilroy_Meduim',
+                            fontSize: 14),
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/logos_ethereum.png',
+                                height: 10,
+                                width: 14,
+                              ),
+                              const SizedBox(
+                                width: 2.0,
+                              ),
+                              Text(
+                                '12339,71',
+                                style: TextStyle(
+                                    color: ConstantColors.whiteColor,
+                                    fontSize: 14.0,
+                                    fontFamily: 'Gilroy_Meduim'),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            '202,24%',
+                            style: TextStyle(
+                                fontFamily: 'Gilroy_Meduim',
+                                color: ConstantColors.greenColor,
+                                fontSize: 14.0),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '24h%',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Text(
+                            '11,3%',
+                            style: TextStyle(
+                                color: ConstantColors.greenColor,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Floor Price',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/logos_ethereum.png',
+                                height: 10,
+                                width: 14,
+                              ),
+                              const SizedBox(
+                                width: 2.0,
+                              ),
+                              Text(
+                                '96,68',
+                                style: TextStyle(
+                                    color: ConstantColors.whiteColor,
+                                    fontSize: 14.0,
+                                    fontFamily: 'Gilroy_Meduim'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Owners',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Text(
+                            '6,38K',
+                            style: TextStyle(
+                                color: ConstantColors.whiteColor,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Items',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Text(
+                            '10K',
+                            style: TextStyle(
+                                color: ConstantColors.whiteColor,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 16.0,
+          ),
+          Container(
+            height: 129.0,
+            width: 312.0,
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10.0),
+              ),
+              color: ConstantColors.grayColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '01',
+                        style: TextStyle(
+                          color: ConstantColors.whiteColor,
+                          fontFamily: 'Gilroy_Meduim',
+                          fontSize: 16.0,
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Image.asset(
+                        'assets/images/Profile_Verified_02.png',
+                        height: 45.0,
+                        width: 45.0,
+                      ),
+                      const SizedBox(
+                        width: 8.0,
+                      ),
+                      Text(
+                        'Cryptopunks',
+                        style: TextStyle(
+                            color: ConstantColors.whiteColor,
+                            fontFamily: 'Gilroy_Meduim',
+                            fontSize: 14),
+                      ),
+                      const SizedBox(
+                        width: 10.0,
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/logos_ethereum.png',
+                                height: 10,
+                                width: 14,
+                              ),
+                              const SizedBox(
+                                width: 2.0,
+                              ),
+                              Text(
+                                '11325,08',
+                                style: TextStyle(
+                                    color: ConstantColors.whiteColor,
+                                    fontSize: 14.0,
+                                    fontFamily: 'Gilroy_Meduim'),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 4.0,
+                          ),
+                          Text(
+                            '204,10%',
+                            style: TextStyle(
+                                fontFamily: 'Gilroy_Meduim',
+                                color: ConstantColors.greenColor,
+                                fontSize: 14.0),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 16.0,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            '24h%',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          const Text(
+                            '-76,51%',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Floor Price',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(
+                                'assets/images/logos_ethereum.png',
+                                height: 10,
+                                width: 14,
+                              ),
+                              const SizedBox(
+                                width: 2.0,
+                              ),
+                              Text(
+                                '96,68',
+                                style: TextStyle(
+                                    color: ConstantColors.whiteColor,
+                                    fontSize: 14.0,
+                                    fontFamily: 'Gilroy_Meduim'),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Owners',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Text(
+                            '3,43K',
+                            style: TextStyle(
+                                color: ConstantColors.whiteColor,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Items',
+                            style: TextStyle(
+                                color: ConstantColors.grayLightColor,
+                                fontSize: 12.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                          const SizedBox(
+                            height: 2.0,
+                          ),
+                          Text(
+                            '10K',
+                            style: TextStyle(
+                                color: ConstantColors.whiteColor,
+                                fontSize: 14.0,
+                                fontFamily: 'Gilroy_Meduim'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

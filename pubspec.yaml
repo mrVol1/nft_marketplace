@@ -93,6 +93,9 @@ flutter:
     - assets/images/world.png
     - assets/images/instagram-filled.png
     - assets/images/twitter-fill.png
+    - assets/images/banner_photo_1.png
+    - assets/images/Profile_Verified_01.png
+    - assets/images/Profile_Verified_02.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

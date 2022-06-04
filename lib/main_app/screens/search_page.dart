@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nft_marketplace/consts/colors.dart';
+import 'package:nft_marketplace/main_app/screens/art.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({Key? key}) : super(key: key);
@@ -77,91 +78,107 @@ class SearchPage extends StatelessWidget {
                   height: 18.0,
                 ),
                 SizedBox(
-                  height: 100.0,
+                  height: 120.0,
                   width: double.infinity,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
-                      Stack(
-                        children: [
-                          SizedBox(
-                            width: 130.0,
-                            height: 96.0,
-                            child: Image.asset(
-                              'assets/images/rectangle_10.png',
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Art',
-                                style: TextStyle(
-                                    color: ConstantColors.whiteColor,
-                                    fontFamily: 'Gilroy_Meduim',
-                                    fontSize: 14.0),
+                      TextButton(
+                        onPressed: () {
+                          Route route = MaterialPageRoute(
+                              builder: (context) => const ArtScreen());
+                          Navigator.push(context, route);
+                        },
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              width: 130.0,
+                              height: 96.0,
+                              child: Image.asset(
+                                'assets/images/rectangle_10.png',
+                                fit: BoxFit.fill,
                               ),
                             ),
-                          ),
-                        ],
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16.0, bottom: 8.0),
+                                child: Text(
+                                  'Art',
+                                  style: TextStyle(
+                                      color: ConstantColors.whiteColor,
+                                      fontFamily: 'Gilroy_Meduim',
+                                      fontSize: 14.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 8.0,
                       ),
-                      Stack(
-                        children: [
-                          SizedBox(
-                            width: 130.0,
-                            height: 96.0,
-                            child: Image.asset(
-                              'assets/images/rectangle_11.png',
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Collectibles',
-                                style: TextStyle(
-                                    color: ConstantColors.whiteColor,
-                                    fontFamily: 'Gilroy_Meduim',
-                                    fontSize: 14.0),
+                      TextButton(
+                        onPressed: () {},
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              width: 130.0,
+                              height: 96.0,
+                              child: Image.asset(
+                                'assets/images/rectangle_11.png',
+                                fit: BoxFit.fill,
                               ),
                             ),
-                          ),
-                        ],
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16.0, bottom: 8.0),
+                                child: Text(
+                                  'Collectibles',
+                                  style: TextStyle(
+                                      color: ConstantColors.whiteColor,
+                                      fontFamily: 'Gilroy_Meduim',
+                                      fontSize: 14.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 8.0,
                       ),
-                      Stack(
-                        children: [
-                          SizedBox(
-                            width: 130.0,
-                            height: 96.0,
-                            child: Image.asset(
-                              'assets/images/rectangle_12.png',
-                              fit: BoxFit.fill,
-                            ),
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Domain Names',
-                                style: TextStyle(
-                                    color: ConstantColors.whiteColor,
-                                    fontFamily: 'Gilroy_Meduim',
-                                    fontSize: 14.0),
+                      TextButton(
+                        onPressed: () {},
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                              width: 130.0,
+                              height: 96.0,
+                              child: Image.asset(
+                                'assets/images/rectangle_12.png',
+                                fit: BoxFit.fill,
                               ),
                             ),
-                          ),
-                        ],
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 16.0, bottom: 8.0),
+                                child: Text(
+                                  'Domain Names',
+                                  style: TextStyle(
+                                      color: ConstantColors.whiteColor,
+                                      fontFamily: 'Gilroy_Meduim',
+                                      fontSize: 14.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

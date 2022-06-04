@@ -187,6 +187,7 @@ class _ProfilePageState extends State<ProfilePage>
                   ),
                 );
               },
+              childCount: 1,
             ),
           ),
         ],
