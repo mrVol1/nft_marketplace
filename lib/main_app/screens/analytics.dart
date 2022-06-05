@@ -87,16 +87,23 @@ class _AnalyticsPageState extends State<AnalyticsPage>
   }
 
   Widget _tabBarView() {
-    return SizedBox(
-      width: 600,
-      height: 500,
+    return Expanded(
       child: TabBarView(
         controller: _tabController,
         children: myTabs.map((Tab tab) {
-          return ListView(
+          return Column(
             children: [
-              _filters(context),
               const Divider(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  _filters(context),
+                  const SizedBox(
+                    width: 12.0,
+                  ),
+                  _chains(context),
+                ],
+              ),
               _activityTabs(),
             ],
           );
@@ -107,47 +114,108 @@ class _AnalyticsPageState extends State<AnalyticsPage>
 
   late int _value = 1;
   Widget _filters(BuildContext context) {
-    return Row(
-      children: [
-        DropdownButton<int>(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(10.0),
-            ),
-            icon: const Icon(Icons.arrow_drop_down),
-            value: _value,
-            style: TextStyle(
-                color: ConstantColors.grayLightColor,
-                fontFamily: 'Gilroy_Meduim',
-                fontSize: 12.0),
-            underline: Container(
-              height: 1,
+    return Container(
+      height: 45.0,
+      width: 165.0,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: ConstantColors.grayColor,
+        border: Border.all(color: ConstantColors.grayColor),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<int>(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10.0),
+          ),
+          icon: const Icon(Icons.arrow_drop_down_sharp),
+          value: _value,
+          style: TextStyle(
               color: ConstantColors.grayLightColor,
+              fontFamily: 'Gilroy_Meduim',
+              fontSize: 12.0),
+          underline: Container(
+            height: 2,
+            color: ConstantColors.grayLightColor,
+          ),
+          onChanged: (value) {
+            setState(() {
+              _value = value!;
+            });
+          },
+          items: const [
+            DropdownMenuItem(
+              child: Text('All Categories'),
+              value: 1,
             ),
-            onChanged: (value) {
-              setState(() {
-                _value = value!;
-              });
-            },
-            items: const [
-              DropdownMenuItem(
-                child: Text('All Categories'),
-                value: 1,
-              ),
-              DropdownMenuItem(
-                child: Text('Images'),
-                value: 2,
-              ),
-              DropdownMenuItem(child: Text('Music'), value: 3),
-              DropdownMenuItem(child: Text('New Content'), value: 4)
-            ]),
-      ],
+            DropdownMenuItem(
+              child: Text('Images'),
+              value: 2,
+            ),
+            DropdownMenuItem(child: Text('Music'), value: 3),
+            DropdownMenuItem(child: Text('New Content'), value: 4)
+          ],
+        ),
+      ),
+    );
+  }
+
+  late int _value1 = 1;
+  Widget _chains(BuildContext context) {
+    return Container(
+      height: 45.0,
+      width: 165.0,
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: ConstantColors.grayColor,
+        border: Border.all(color: ConstantColors.grayColor),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<int>(
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10.0),
+          ),
+          icon: const Icon(Icons.arrow_drop_down_sharp),
+          value: _value1,
+          style: TextStyle(
+              color: ConstantColors.grayLightColor,
+              fontFamily: 'Gilroy_Meduim',
+              fontSize: 12.0),
+          underline: Container(
+            height: 2,
+            color: ConstantColors.grayLightColor,
+          ),
+          onChanged: (value) {
+            setState(() {
+              _value1 = value!;
+            });
+          },
+          items: const [
+            DropdownMenuItem(
+              child: Text('All Chains'),
+              value: 1,
+            ),
+            DropdownMenuItem(
+              child: Text('Images'),
+              value: 2,
+            ),
+            DropdownMenuItem(child: Text('Music'), value: 3),
+            DropdownMenuItem(child: Text('New Content'), value: 4)
+          ],
+        ),
+      ),
     );
   }
 
   Widget _activityTabs() {
     return SizedBox(
       width: 600.0,
-      height: 1200.0,
+      height: 509.0,
       child: ListView(
         children: [
           Container(
