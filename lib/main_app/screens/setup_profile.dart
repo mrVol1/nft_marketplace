@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nft_marketplace/consts/colors.dart';
 import 'package:nft_marketplace/main_app/screens/home.dart';
+import 'package:nft_marketplace/main_app/screens/welcome.dart';
 
 class SetupProfile extends StatelessWidget {
   const SetupProfile({Key? key}) : super(key: key);
@@ -212,7 +213,8 @@ class SetupProfile extends StatelessWidget {
         ),
       ),
       onPressed: () {
-        Route route = MaterialPageRoute(builder: (context) => HomeScreen());
+        Route route =
+            MaterialPageRoute(builder: (context) => const WelcomeScreen());
         Navigator.push(context, route);
       },
       child: Text(
