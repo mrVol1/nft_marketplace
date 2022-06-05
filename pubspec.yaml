@@ -97,6 +97,9 @@ flutter:
     - assets/images/Profile_Verified_01.png
     - assets/images/Profile_Verified_02.png
     - assets/images/image_6.png
+    - assets/images/ic_round-verified.png
+    - assets/images/ellipse_17_1.png
+    - assets/images/ellipse_17_2.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
