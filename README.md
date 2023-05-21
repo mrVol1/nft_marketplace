@@ -1,6 +1,6 @@
 # nft_marketplace
 
-A new Flutter project.
+Приложение для покупки/продажи NFT коллекций с сайта [OpenSea](https://opensea.io)
 
 ## Getting Started
 
